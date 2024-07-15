@@ -3,7 +3,12 @@
   "extends": [
     "config:recommended"
   ],
-  "terraform": {
-    "fileMatch": ["\\.tf$"]
-  }
+  "datasources": [{
+    "datasource": "aws-machine-image",
+    "packageRules": [{
+      "managers": ["terraform"],
+      "datasource": "aws-machine-image",
+      "regions": ["us-east-1"]  
+    }]
+  }]
 }
